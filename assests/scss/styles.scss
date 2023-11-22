@@ -1,7 +1,9 @@
+@use 'loader';
 @import 'variables';
 @import 'mixins';
 @import 'nav';
 @import 'population';
+
 
 * {
   padding: 0;
@@ -22,6 +24,26 @@ body {
   font-family: $font-family;
 }
 
+.me {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/background.png"); 
+  background-size: cover;
+  background-attachment: fixed;
+
+  .header-content {
+    margin: auto;
+    width: 70%;
+    text-align: center;
+  }
+
+  .header-para {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -38,6 +60,12 @@ body {
   width: 80%;
   margin: auto;
 }
+
+
+.loader-wrapper {
+  display: none;
+}
+
 
 
 /* Header styles */
@@ -102,19 +130,22 @@ header.uni {
 /* Images section styles */
 .images-sec {
   background-color: $primary-color;
-  padding: 20px;
+  padding: 40px;
 
   figure {
     text-align: center;
 
     p {
-      font-size: 17px;
+      font-size: 18px;
       color: #fff;
+      margin: 10px 0;
     }
 
     img {
       max-width: 100%;
       height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
     }
 
     figcaption {

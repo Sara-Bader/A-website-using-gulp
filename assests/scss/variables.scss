@@ -1,21 +1,23 @@
-@font-face {
-    font-family: 'Josefin Sans';
-    src: url('path/to/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-  }
-  
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: local('Roboto'), url('fonts/Roboto/Roboto-BlackItalic.ttf') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-$primary-color: #007bff;
+
 $primary-color: #6ca0db;
 $accent-color: #2913a7;
 $font-family: "Josefin Sans", sans-serif;
 $font-family-roboto: "Roboto", sans-serif;
 $font-weight-bold: 700;
 $font-weight-normal: 400;
+
+// Colors
+
+$primary-text-color: #333;
+
+$primary-bg-color: #f9f9f9;
+$secondary-bg-color: #222;
+$tertiary-bg-color: #111;
+
+$primary-border-color: #f1f1f1;
+
+$primary-light-color: #fff;
+$primary-dark-color: #000;
+
+$ff-primary: 'Roboto', sans-serif;
+$ff-secondary: 'Poppins', sans-serif;
