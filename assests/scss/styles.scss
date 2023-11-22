@@ -1,9 +1,8 @@
-@use 'loader';
+@use 'btn';
+@use 'population';
 @import 'variables';
 @import 'mixins';
 @import 'nav';
-@import 'population';
-
 
 * {
   padding: 0;
@@ -18,68 +17,16 @@ ul {
   list-style: none;
 }
 
-
 body {
   background-color: $primary-color;
   font-family: $font-family;
 }
 
-.me {
-  width: 100%;
-  height: 100vh;
-  background-image: url("../images/background.png"); 
-  background-size: cover;
-  background-attachment: fixed;
-
-  .header-content {
-    margin: auto;
-    width: 70%;
-    text-align: center;
-  }
-
-  .header-para {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.container {
-  width: 80%;
-  margin: auto;
-}
-
-
-.loader-wrapper {
-  display: none;
-}
-
-
-
-/* Header styles */
-header.uni {
+.header-section {
   width: 100%;
   height: 100vh;
   background-size: cover;
   background-attachment: fixed;
-
-  .overlay {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(34, 34, 34, 0.6);
-  }
 
   .container {
     display: flex;
@@ -98,36 +45,93 @@ header.uni {
         margin-bottom: 26px;
         animation: contentLeft 2s;
       }
-    }
-  }
-}
 
-/* About section styles */
-.about-sec {
-  .container {
-    .row {
-      .about-content {
-        .about-title {
-          color: $accent-color;
-          margin-bottom: 40px;
-          font-size: 56px;
-          font-weight: $font-weight-bold;
-        }
-
-        .about-para {
-          margin-bottom: 50px;
-          font-size: 17px;
-          color: #fff;
-          font-family: $font-family-roboto;
-          line-height: 30px;
-          font-weight: $font-weight-normal;
-        }
+      .header-para {
+        color: $primary-light-color;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 5%;
+        animation: contentLeft 2s;
       }
     }
   }
 }
 
-/* Images section styles */
+.me {
+  @extend .header-section;
+  background-image: url("../images/background.png");
+
+  .header-content {
+    margin: auto;
+    width: 70%;
+    text-align: center;
+  }
+
+  .header-para {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.uni {
+  @extend .header-section;
+  background-image: url("../images/bzu.png");
+}
+
+.city {
+  @extend .header-section;
+  background-image: url("../images/house.png");
+}
+
+
+.about-sec {
+  color: $accent-color;
+  background-color: $primary-bg-color;
+  margin-top: 20px; 
+
+  .container {
+    .row {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between; 
+      flex-wrap: wrap; 
+    }
+  }
+}
+
+.about-content {
+  flex: 1; 
+  max-width: 50%; 
+
+  .about-title {
+    color: $accent-color;
+    margin-bottom: 40px;
+    font-size: 56px;
+    font-weight: $font-weight-bold;
+  }
+
+  .about-para {
+    margin-bottom: 50px;
+    font-size: 17px;
+    font-family: $font-family-roboto;
+    line-height: 30px;
+    font-weight: $font-weight-normal;
+  }
+}
+
+.about-img {
+  flex: 1; 
+  max-width: 50%; 
+
+  img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+}
+
+
 .images-sec {
   background-color: $primary-color;
   padding: 40px;
@@ -137,7 +141,7 @@ header.uni {
 
     p {
       font-size: 18px;
-      color: #fff;
+      color: $primary-light-color;
       margin: 10px 0;
     }
 
@@ -155,9 +159,58 @@ header.uni {
   }
 }
 
+.skills-sec {
+  background-color: $primary-bg-color;
+  padding: 40px 0;
+
+  .container {
+    text-align: center;
+
+    .skills-title {
+      font-size: 2em;
+      font-weight: bold;
+      color: $accent-color;
+      margin-bottom: 30px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-around;
+
+      .skills-box {
+        width: 30%;
+
+        .box-img {
+          overflow: hidden;
+          border: 2px solid $accent-color;
+
+          img {
+            width: 100%;
+            transition: transform 0.5s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .box-details {
+          margin-top: 20px;
+
+          .box-name {
+            color: $accent-color;
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
 footer {
   background-color: #333;
-  color: #fff;
+  color: $primary-light-color;
   text-align: center;
   padding: 20px 0;
 
@@ -180,30 +233,23 @@ footer {
     text-decoration: underline;
   }
 }
-
-
-.uni {
-  .about-sec {
-    border-top: #20cbff4e 1px solid;
-    border-bottom: #20cbff4e 1px solid;
-    padding-top: 5%;
-  }
-
-  .images-sec {
-    background-color: $primary-color;
-    padding: 20px;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
+/* General styles */
 
-
-.city {
-  width: 100%;
-  height: 100vh;
-  background-image: url("../images/house.png");
-  background-size: cover;
-  background-attachment: fixed;
+body {
+  font-family: sans-serif;
+  color: #333;
 }
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
 
 
 #welcome-message {
@@ -211,16 +257,58 @@ footer {
   font-size: 30px;
   font-weight: bold;
   margin-top: 20px;
+  color: #fff; 
+}
 
-  &.morning {
-    color: #f08c31;
+header.home {
+  background-color:$primary-bg-color;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .overlay {
+    background-color:$primary-bg-color;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
-  &.afternoon {
-    color: #ffd700;
-  }
+  .container {
+    width: 600px;
+    background-color: $primary-bg-color;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  &.evening {
-    color: #953767;
+    .header-content {
+      text-align: center;
+
+      .header-title {
+        font-size: 36px;
+      }
+
+      .header-para {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .btn-container {
+        margin-top: 20px;
+      }
+    }
   }
 }

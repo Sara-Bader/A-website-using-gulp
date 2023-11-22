@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
 
-<script src="dist\js\main.min.js" ></script>
-    <title>Document</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+  <script src="dist\js\main.min.js"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="dist/css/styles.min.css" />
+</head>
 
-    <link rel="stylesheet" href="dist/css/styles.min.css" />
-  </head>
-  <body>
-    <nav>
-      <div class="nav-container row">
-        <div class="nav-list">
-          <ul class="list">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="Me.html" class="nav-link active">more about me</a>
-            </li>
-            <li class="nav-item">
-              <a href="Battir.html" class="nav-link"> Battir village</a>
-            </li>
-            <li class="nav-item">
-              <a href="University.html" class="nav-link">University of Birzeit</a>
-            </li>
-          </ul>
-        </div>
+<body>
+  <nav>
+    <div class="nav-container row">
+      <div class="nav-list">
+        <ul class="list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="Me.html" class="nav-link active">more about me</a>
+          </li>
+          <li class="nav-item">
+            <a href="Battir.html" class="nav-link"> Battir village</a>
+          </li>
+          <li class="nav-item">
+            <a href="University.html" class="nav-link">University of Birzeit</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <div id="welcome-message"></div>
-    <header class="home">
-      <div class="overlay">
-        <div class="container">
-          <div class="row">
-            <div class="header-content">
-              <p class="header-para">
-                I am a student at Birzeit University   
-              </p>
-              <a class="btn" href="Me.html">More on me  ...</a>
+    </div>
+  </nav>
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+  <header class="home">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="header-content">
+            <div id="welcome-message">
+              Welcome to Our Website!
             </div>
+            <p class="header-para">
+              I am a student at Birzeit University
+            </p>
+            <a class="more-btn" href="Me.html">More on me ...</a>
           </div>
         </div>
       </div>
-    </header>
-  </body>
+    </div>
+  </header>
+</body>
 
 </html>
