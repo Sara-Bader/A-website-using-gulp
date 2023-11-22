@@ -1,7 +1,7 @@
-@use 'variables';
-@use 'mixins';
-@use 'nav';
-@use 'population';
+@import 'variables';
+@import 'mixins';
+@import 'nav';
+@import 'population';
 
 * {
   padding: 0;
@@ -175,3 +175,21 @@ footer {
 }
 
 
+#welcome-message {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+
+  &.morning {
+    color: #f08c31;
+  }
+
+  &.afternoon {
+    color: #ffd700;
+  }
+
+  &.evening {
+    color: #953767;
+  }
+}
